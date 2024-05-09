@@ -37,13 +37,14 @@ const Login = () => {
       })
     }
 
-  return (
-    <div>
-      <div><input type='text' placeholder='username...' onChange={(e) => setUsername(e.target.value)}/></div>
-      <div><input type='password' placeholder='password...' onChange={(e) => setPassword(e.target.value)}/></div>
-      <button onClick={login}>Login</button>
-    </div>
-  )
+    return (
+      <div className='login'>
+        <div className='input-field'><input type='text' placeholder='username...' onChange={(e) => setUsername(e.target.value)}/></div>
+        <div className='input-field'><input type='password' placeholder='password...' onChange={(e) => setPassword(e.target.value)}/></div>
+        <button className='login-btn' onClick={login}>Login</button>
+      </div>
+    )
+    
 }
 
 export default Login

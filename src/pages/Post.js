@@ -85,51 +85,51 @@ const Post = () => {
     }
     
     
-  return (
-    <div className='tweet'>
-      <div className='username'>@{postObject.username}</div>
-      <div onClick={() => {
-        if(authState.username === postObject.username) {
-        editPost("title")
-        }
-      }}>
-        <h2>{postObject.title}</h2>
-      </div>
-      <div onClick={() => {
-        if(authState.username === postObject.username) {
-        editPost("body")
-        }
-      }}>{postObject.postText}</div>
-      { authState.username === postObject.username ? <button onClick={() => deletePost(postObject.id)}>delete post</button> : <></> }
-      <div className='commentSection'>
-        <p>Comment Section</p>
-        <div className='addComment'>
-          <input type='text' 
-            placeholder='Comment...' 
-            value={newComment}
-            onChange={(e) => {setNewComment(e.target.value)} } 
-            autoComplete='off'
-          />
-          <button onClick={addComment}>Add Comment</button>
+    return (
+      <div className='tweet'>
+        <div className='username'>@{postObject.username}</div>
+        <div className='post-title' onClick={() => {
+          if(authState.username === postObject.username) {
+            editPost("title")
+          }
+        }}>
+          <h2>{postObject.title}</h2>
         </div>
-        {comments.length === 0 ? <p>No comment</p> : (
-           <div className='listOfComments'>
-           {comments.map((comment, key) => {
-             return <div key={key} className='comment'>
-               {comment.commentBody}
-               <label> - username: {comment.username}</label>
-               { 
-                authState.username === comment.username &&
-                <button onClick={() => deleteComment(comment.id)}>DELETE</button>
-              }
-             </div>
-           })}
-         </div>
-        )}
+        <div className='post-body' onClick={() => {
+          if(authState.username === postObject.username) {
+            editPost("body")
+          }
+        }}>{postObject.postText}</div>
+        { authState.username === postObject.username? <button className='delete-post-btn' onClick={() => deletePost(postObject.id)}>delete post</button> : <></> }
+        <div className='commentSection'>
+          <p>Comment Section</p>
+          <div className='addComment'>
+            <input type='text' 
+              placeholder='Comment...' 
+              value={newComment}
+              onChange={(e) => {setNewComment(e.target.value)} } 
+              autoComplete='off'
+            />
+            <button className='add-comment-btn' onClick={addComment}>Add Comment</button>
+          </div>
+          {comments.length === 0? <p>No comment</p> : (
+             <div className='listOfComments'>
+             {comments.map((comment, key) => {
+               return <div key={key} className='comment'>
+                 {comment.commentBody}
+                 <label> - username: {comment.username}</label>
+                 { 
+                  authState.username === comment.username &&
+                  <button className='delete-comment-btn' onClick={() => deleteComment(comment.id)}>DELETE</button>
+                }
+               </div>
+             })}
+           </div>
+          )}
+        </div>
       </div>
-              
-    </div>
-  )
+    )
+    
 }
 
 export default Post

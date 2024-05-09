@@ -4,114 +4,179 @@
   box-sizing: border-box;
 }
 
-.App {
-  max-width: 600px;
-  margin: 0 auto;
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px; 
+  padding: 20px; 
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  width: 100%; 
+  max-width: 400px;
+  margin: 10% auto; 
 }
 
-body {
-  background-color: rgb(33, 33, 33);
+.input-field {
+  width: 100%; 
+  padding: 10px; 
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box; 
+}
+
+.input-field input {
+  border: none;
+}
+
+.login-btn {
+  padding: 10px 20px; 
+  font-size: 16px;
+  background-color: #007bff;
   color: white;
-  width: 90%;
-  margin: 10px auto;
+  border: none;
+  border-radius: 4px; 
+  cursor: pointer; 
+  transition: background-color 0.3s ease; 
 }
 
-.tweet {
-  margin-left: 10px;
-  padding: 10px;
+.login-btn:hover {
+  background-color: #0056b3; 
 }
 
-.tweet h3, .tweet h2 {
-  margin-bottom: 10px;
-}
 
-.tweet-line {
-  width: 100%;
-  height: 1px;
-  max-height: 1px;
-  background-color: rgb(142, 142, 142);
-}
 
 .home-nav {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  background-color: white;
-  color: black;
+  align-items: center;
   padding: 10px 20px;
-  margin-bottom: 30px;
-  color: black;
-  cursor: pointer;
+  background-color: #f9f9f9;
+  border-bottom: 1px solid #ccc;
+  width: 100%; 
 }
 
+.home-nav a,
+.home-nav button {
+  margin-left: 10px;
+  text-decoration: none;
+  color: #010c18; 
+  font-size: 16px; 
+}
+
+.home-nav a:hover,
+.home-nav button:hover {
+  color: #0056b3;
+}
+
+.home-nav h3 {
+  margin: 0;
+  font-size: 18px; 
+  color: #333;
+}
+
+
+.tweet {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px; 
+  padding: 20px;
+  border-radius: 8px; 
+  margin-top: 20%;
+  width: 90%;
+  max-width: 600px;
+  margin: 5% auto;
+  background-color: #f3f3f3;
+
+}
+
+
+.post-title,
+.commentSection {
+  width: 100%; 
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc; 
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.delete-post-btn,
+.add-comment-btn,
+.delete-comment-btn {
+  padding: 10px 20px;
+  font-size: 16px; 
+  background-color: #001a36; 
+  color: white;
+  border: none; 
+  border-radius: 4px; 
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+
+
+.delete-post-btn:hover,
+.add-comment-btn:hover,
+.delete-comment-btn:hover {
+  background-color: #0056b3;
+}
+
+
 .createPostPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px; 
+  padding: 20px; 
+  border-radius: 8px; 
+  width: 100%;
   max-width: 500px;
-  margin: 0 auto;
+  margin: 10% auto; 
 }
 
 .form {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  gap: 10px; 
+  width: 100%; 
 }
 
-.input, .input-text {
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+label {
+  font-weight: bold; 
+  margin-bottom: 5px; 
+}
+
+.input,
+.text-post {
+  width: 100%; 
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc; 
+  border-radius: 4px; 
   box-sizing: border-box;
 }
 
-.text-post {
-  height: 150px;
-  
+.error {
+  color: #ff0000; 
+  font-size: 12px; 
+  margin-top: 5px; 
 }
 
 .create-btn {
   padding: 10px 20px;
+  font-size: 16px;
   background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
+  color: white; 
+  border: none; 
+  border-radius: 4px; 
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .create-btn:hover {
   background-color: #0056b3;
-}
-
-span.error {
-  color: red;
-  font-size: 14px;
-}
-
-.username {
-  text-align: right;
-  width: 100%;
-  color: rgb(222, 222, 222);
-}
-
-.commentSection p {
-  margin-top: 80px;
-  background-color: rgb(161, 0, 0);
-}
-
-.UnlikeBtn {
-  background-color: red;
-}
-
-.likeBtn {
-  background-color: white;
-}
-
-.profile {
-  margin: 10px;
-}
-
-.eachPost {
-  margin: 10px 0px;
-  background-color: white;
-  color: black;
-  padding: 10px;
 }

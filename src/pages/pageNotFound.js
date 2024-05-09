@@ -1,9 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import "../App.css"
 
 const pageNotFound = () => {
   return (
-    <div>
+    <div className='pageNotFound'>
       <h1>Page not found</h1>
       <Link to='/registration'>Register Page</Link> 
       <div></div>

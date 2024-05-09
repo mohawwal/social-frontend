@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+import "../App.css";
 
 const ChangePassword = () => {
   const [oldPassword, setOldPassword] = useState("")
@@ -22,11 +23,11 @@ const ChangePassword = () => {
   }
 
   return (
-    <div>
+    <div className='changePassword'>
       <h1>password change here</h1>
       <input type='password' placeholder='Old password' onChange={(e)=> {setOldPassword(e.target.value)}}/>
       <input type='password' placeholder='New password' onChange={(e) => {setNewPassword(e.target.value)}} />
-      <div>
+      <div className='changePasswordBtn'>
         <button onClick={changePasswordBtn}>save change</button>
       </div>
     </div>
